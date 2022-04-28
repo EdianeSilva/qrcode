@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="container-fluid">
+<h1 class="center">Gerador de QR code</h1>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label" for="content">Coneúdo:</label>
+      <div class="input">
+        <input type="text" class="form-control" id="content" placeholder="www.exemplo.com.br">
+      </div>
+    </div>
+    <div class="form-group"> 
+        <button type="button" class="btn btn-default" id="generate">Gerar QRcode</button>
+    </div>
+  </div>
+  <div class="text-center">
+    <img src="https://chart.googleapis.com/chart?cht=qr&chl=Hello+World&chs=160x160&chld=L|0"
+         class="qr-code img-thumbnail img-responsive">
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="script.js"></script>
+
+</body>
+</html>
