@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Windows</title>
+</head>
+<body>
+<div id="frase">O botão de concluir aula só fica clicável depois que toda a aula é assistida</div>
+<button onclick="play()" id="btn" >Play</button>
+
+
+
+    <script>
+        var voices = speechSynthesis.getVoices();
+        const voice = voices.filter(voice => voice.lang.includes ("BR")) [0]
+            function addPlayButton() {
+                const paragrafos = document.querySelectorAll("p")
+                paragrafos.forEach(p => {
+                    const paragrafo = {
+                        text: p.innerText,
+                            play: function () {
+                            const utterance = new SpeechSynthesisUtterance (this.text)
+                            utterance.voice = voice
+                            speechSynthesis.speak(utterance)
+                            }
+                    }
+                    const button = document.createElement("button")
+                    button.innerText = "play"
+                    button.addEventListener("click", () => { paragrafo.play()})
+                    p.appendChild(button)
+                })
+            }
+            addPlayButton()
+    </script>
+</body>
+</html>
