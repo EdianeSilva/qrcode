@@ -1,9 +1,11 @@
 body{
   max-width: 500px;
-  margin: 0% auto;
+  margin: 2% auto;
 }
 .container-fluid, .form-group{
   margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 h1{
   display: flex;
